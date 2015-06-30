@@ -6,7 +6,7 @@ It provides easy to use extension to experiment with augmented reality and three
 I did a presentation about it. You can find the [slides](http://jeromeetienne.github.io/slides/augmentedrealitywiththreejs/)
 here.
 
-# A Screenshot
+# A Screenshot 
 [![screenshot](https://raw.githubusercontent.com/jeromeetienne/threex.webar/master/examples/images/screenshot-threex-webar-512x512.jpg)](http://jeromeetienne.github.io/threex.webar/examples/basic.html)
 
 # How To Install It
