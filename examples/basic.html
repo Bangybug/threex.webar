@@ -12,6 +12,7 @@
 <!-- include some extensions -->
 <script src='../threex.webcamgrabbing.js'></script>
 <script src='../threex.imagegrabbing.js'></script>
+<script src='../threex.imageserialgrabbing.js'></script>
 <script src='../threex.videograbbing.js'></script> 
 <script src='../threex.jsarucomarker.js'></script>
 
@@ -25,6 +26,7 @@
 	Source:
 	<a class='webcam' href='javascript:void();'>webcam</a> -
 	<a class='image'  href='javascript:void();'>image</a> -
+	<a class='serialImage'  href='javascript:void();'>serial-image</a> -
 	<a class='video'  href='javascript:void();'>video</a>
 </div>
 
@@ -41,6 +43,11 @@
 		location.hash	= '#image'
 		location.reload()
 	})
+
+	document.querySelector('#info .serialImage').addEventListener('click', function(event){
+		location.hash   = '#serialimage'
+		location.reload()
+    })
 
 	document.querySelector('#info .video').addEventListener('click', function(event){
 		location.hash	= '#video'
@@ -152,6 +159,9 @@
 	}else if( location.hash === '#image' ){
 		var videoGrabbing = new THREEx.ImageGrabbing()
 		jsArucoMarker.videoScaleDown = 10
+    }else if( location.hash === '#serialimage' ){
+        var videoGrabbing = new THREEx.ImageSerialGrabbing()
+        jsArucoMarker.videoScaleDown = 2    
 	}else console.assert(false)
 
 	// attach the videoGrabbing.domElement to the body
