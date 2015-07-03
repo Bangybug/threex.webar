@@ -95,18 +95,18 @@
 
 		var mesh = new THREE.AxisHelper
 		markerObject3D.add( mesh );
-	})()
+	})();
 
 	// add a awesome logo to the scene
-	;(function(){
-		var material = new THREE.SpriteMaterial({
-			map: THREE.ImageUtils.loadTexture( 'images/awesome.png' ),
-		});
-		var geometry = new THREE.BoxGeometry(1,1,1)
-		var object3d = new THREE.Sprite(material );
-		object3d.scale.set( 2, 2, 1 );
-		markerObject3D.add(object3d)
-	})()
+	// (function(){
+	// 	var material = new THREE.SpriteMaterial({
+	// 		map: THREE.ImageUtils.loadTexture( 'images/awesome.png' ),
+	// 	});
+	// 	var geometry = new THREE.BoxGeometry(1,1,1)
+	// 	var object3d = new THREE.Sprite(material );
+	// 	object3d.scale.set( 2, 2, 1 );
+	// 	markerObject3D.add(object3d)
+	// })()
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
@@ -168,13 +168,13 @@
         document.body.appendChild(videoGrabbing.domElement)
 
 	// set the markerObject3D as visible
-	markerObject3D.visible	= false
+	markerObject3D.visible	= true
 	// process the image source with the marker recognition
 	onRenderFcts.push(function(){
 		var domElement	= videoGrabbing.domElement
 		var markers	= jsArucoMarker.detectMarkers(domElement)
 
-		markerObject3D.visible = false
+		//markerObject3D.visible = false
 
 		// see if this.markerId has been found
 		markers.forEach(function(marker){
@@ -183,7 +183,7 @@
 
 			jsArucoMarker.markerToObject3D(marker, markerObject3D)
 
-			markerObject3D.visible = true
+			//markerObject3D.visible = true
 		})
 	})
 </script></body>
